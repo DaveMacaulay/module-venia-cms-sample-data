@@ -34,13 +34,13 @@ class Installer implements Setup\SampleData\InstallerInterface
     public function __construct(
         \MagentoEse\VeniaCmsSampleData\Model\Page $page,
         \MagentoEse\VeniaCmsSampleData\Model\Block $block
-        //\MagentoEse\VeniaCmsSampleData\Model\Bluefoot $bluefoot
+        \MagentoEse\VeniaCmsSampleData\Model\Bluefoot $bluefoot
 
     ) {
         //$this->category = $category;
         $this->page = $page;
         $this->block = $block;
-        //$this->bluefoot = $bluefoot;
+        $this->bluefoot = $bluefoot;
     }
 
     /**
@@ -50,6 +50,6 @@ class Installer implements Setup\SampleData\InstallerInterface
     {
         $this->page->install(['MagentoEse_VeniaCmsSampleData::fixtures/pages.csv']);
         $this->block->install(['MagentoEse_VeniaCmsSampleData::fixtures/blocks.csv']);
-        //$this->Category->install(['MagentoEse_VeniaCmsSampleData::fixtures/bluefoot.csv']);
+        $this->bluefoot->install(['MagentoEse_VeniaCmsSampleData::fixtures/bluefoot.csv']);
     }
 }
